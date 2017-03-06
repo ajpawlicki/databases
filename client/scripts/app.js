@@ -4,7 +4,7 @@ var app = {
 
   //TODO: The current 'handleUsernameClick' function just toggles the class 'friend'
   //to all messages sent by the user
-  server: '/classes/messages',
+  server: 'http://127.0.0.1:3000/classes/users',
   username: 'anonymous',
   roomname: 'lobby',
   lastMessageId: 0,
@@ -38,19 +38,19 @@ var app = {
     }, 3000);
   },
 
-  addUser: function(username) {
-    $.ajax({
-      url: app.server,
-      type: 'POST',
-      data: username,
-      success: function() {
-        console.log('Succesfully saved username');
-      },
-      error: function(error) {
-        console.log('Failed to save username', error);
-      } 
-    });
-  },
+  // addUser: function(username) {
+  //   $.ajax({
+  //     url: app.server,
+  //     type: 'POST',
+  //     data: username,
+  //     success: function() {
+  //       console.log('Succesfully saved username');
+  //     },
+  //     error: function(error) {
+  //       console.log('Failed to save username', error);
+  //     } 
+  //   });
+  // },
 
   send: function(message) {
     app.startSpinner();
